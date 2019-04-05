@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-import DashboardComponent from './components/DashboardComponent';
-import './App.css';
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import NavbarComponent from './components/NavbarComponent';
+
+import './App.css';
+
+import LoginScreen from './screens/LoginScreen';
+import DashboardScreen from './screens/DashboardScreen';
+import UserScreen from './screens/UserScreen';
 
 class App extends Component {   
 
 render() {  
   return (
     <div className="App">
-      <DashboardComponent/>
+      <Router>
+      <NavbarComponent/>
+      <Route path='/' exact component={LoginScreen}/>
+      <Route path='/Login' component={LoginScreen}/>      
+      <Route path='/Dashboard' component={DashboardScreen}/>
+      <Route path="/user" exact component={UserScreen} />
+      <Route path='/User/:userName' exact component={UserScreen}/>
+      </Router>
     </div>
-  )
+  );
 }
 
 }

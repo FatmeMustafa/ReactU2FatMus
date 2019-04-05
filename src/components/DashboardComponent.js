@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+
 import './DashboardComponent.css';   //importing file to add external styling
+
 import UserComponent from './UserComponent';
 import WrapperComponent from './WrapperComponent';
-import NavbarComponent from './NavbarComponent';
 
 /*The purpose of DashboardComponent is to add(addUser) and remove(removeUser) users through a form. 
 It includes a button to toggle the colors(toggleColor) of our users and renders a list with UserComponents.
@@ -43,7 +44,6 @@ class DashboardComponent extends Component {
   render() {
     return (
       <div className="container">
-        <NavbarComponent/>
         <div className="row">
           <div className="col-md-6">
             <WrapperComponent>

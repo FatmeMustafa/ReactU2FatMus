@@ -1,35 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
-import LoginScreen from '../screens/LoginScreen';
-import DashboardScreen from '../screens/DashboardScreen';
-import UserScreen from '../screens/UserScreen';
+import { NavLink } from "react-router-dom";
+
 import styles from './NavbarComponent.module.css';
 
-
-
-
- 
-
+/*The purpose of NavbarComponent is to navigate through all three screens and add a specific style to the active link on the navigation.*/
 class NavbarComponent extends Component {
   render() {
-    return (
-
-//ROBIN HELP! I DONT KNOW HOW TO DEAL WITH CLASSES I CANT ADD THE CLASS TO THE MODULE CSS IT WONT BE APPLIED IT IS OVERWRITTEN BY STYLEA
-      <Router>
-      
+    return (      
+      //HELP ROBIN! -> HOW DO I ADD AN ACTIVE CLASS AND USE IT IN INDEX.CSS WITHOUT MODULE.CSS OVERWRITING IT WITH STYLEA?
       <nav className={styles.styleNavbar}> 
-        <NavLink to="/" className={styles.styleA} activeStyle={{color: "rgb(199, 197, 197)" }} exact>Login</NavLink> 
-        <NavLink to="/Dashboard" className={styles.styleA} activeStyle={{color: "rgb(199, 197, 197)" }}>Dashboard</NavLink>
-        <NavLink to="/User" className={styles.styleA} activeStyle={{color: "rgb(199, 197, 197)" }}>User</NavLink>
-      </nav>
-
-      <Route exact path="/" component={LoginScreen}/>
-      <Route path="/Dashboard" component={DashboardScreen}/>
-      <Route path="/User" component={UserScreen}/>
-    
-  
-      </Router>  
+        <NavLink to='/Login' className={styles.styleA} activeStyle={{color: "rgb(199, 197, 197)" }}>Login</NavLink>  
+        <NavLink to='/Dashboard' className={styles.styleA} activeStyle={{color: "rgb(199, 197, 197)" }}>Dashboard</NavLink>
+        <NavLink to='/User' className={styles.styleA} activeStyle={{color: "rgb(199, 197, 197)" }}>User</NavLink>
+      </nav>  
     )
   }   
 }
+
 export default NavbarComponent;
